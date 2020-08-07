@@ -19,7 +19,7 @@
     "typescript": "^3.9.7"
   },
   "scripts": {
-    "start": "node ./server.js",
+    "start": "npm run server",
     "dev": "concurrently \"react-scripts start\" \"node ./server.js\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
