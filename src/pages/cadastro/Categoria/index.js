@@ -114,19 +114,18 @@ function CadastroCategoria() {
         // eslint-disable-next-line react/jsx-no-comment-textnodes
         </div> */}
 
-        <button>
+        <button type="submit">
+
           Cadastrar
         </button>
       </form>
 
       <ul>
-        {categorias.map((categoria, indice) => {
-          return (
-            <li key={`${categoria}${indice}`}>
-              {categoria.titulo}
-            </li>
-          );
-        })}
+        {categorias.map((categoria) => (
+          <li key={`${categoria.id}`}>
+            {categoria.titulo}
+          </li>
+        ))}
       </ul>
 
       <Link to="/">
