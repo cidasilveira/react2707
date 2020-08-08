@@ -25,7 +25,7 @@ function CadastroCategoria() {
   function handleChange(infosDoEvento) {
     setValue(
       infosDoEvento.target.getAttribute('name'),
-      infosDoEvento.target.value,
+      infosDoEvento.target.value
     );
   }
 
@@ -33,7 +33,7 @@ function CadastroCategoria() {
 
   useEffect(() => {
     if (window.location.href.includes('localhost')) {
-      const URL = 'http://https://react2707.herokuapp.com/categorias';
+      const URL = 'http://localhost:8080/categorias';
       fetch(URL)
         .then(async (respostaDoServer) => {
           if (respostaDoServer.ok) {
@@ -109,23 +109,20 @@ function CadastroCategoria() {
               onChange={handleChange}
             />
           </label>
-        // eslint-disable-next-line react/jsx-no-comment-textnodes
-        // eslint-disable-next-line react/jsx-no-comment-textnodes
-        // eslint-disable-next-line react/jsx-no-comment-textnodes
         </div> */}
 
-        <button type="submit">
-
+        <button>
           Cadastrar
         </button>
       </form>
-
       <ul>
-        {categorias.map((categoria) => (
-          <li key={`${categoria.id}`}>
-            {categoria.titulo}
-          </li>
-        ))}
+        {categorias.map((categoria, indice) => {
+          return (
+            <li key={`${categoria}${indice}`}>
+              {categoria.titulo}
+            </li>
+          )
+        })}
       </ul>
 
       <Link to="/">
