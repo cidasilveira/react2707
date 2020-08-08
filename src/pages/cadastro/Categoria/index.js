@@ -25,7 +25,7 @@ function CadastroCategoria() {
   function handleChange(infosDoEvento) {
     setValue(
       infosDoEvento.target.getAttribute('name'),
-      infosDoEvento.target.value
+      infosDoEvento.target.value,
     );
   }
 
@@ -116,13 +116,11 @@ function CadastroCategoria() {
         </button>
       </form>
       <ul>
-        {categorias.map((categoria, indice) => {
-          return (
-            <li key={`${categoria}${indice}`}>
-              {categoria.titulo}
-            </li>
-          )
-        })}
+        {categorias.map((categoria, indice) => (
+          <li key={`${categoria}${indice}`}>
+            {categoria.titulo}
+          </li>
+        ))}
       </ul>
 
       <Link to="/">
